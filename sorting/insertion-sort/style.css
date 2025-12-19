@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#array {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.block {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  line-height: 40px;
+  border: 1px solid black;
+  background-color: #f2f2f2;
+}
+
+.active {
+  background-color: yellow;
+}
+
+.key {
+  background-color: orange;
+}
+
+.sorted {
+  background-color: lightgreen;
+}
+
+input, button {
+  padding: 6px;
+  margin: 5px;
+}
