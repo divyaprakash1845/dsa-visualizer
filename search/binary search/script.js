@@ -1,4 +1,5 @@
 let delay = 1000;
+let steps = 0;
 document.getElementById("algo").addEventListener("change", (e) => {
   updateComplexity(e.target.value);
 });
@@ -7,6 +8,10 @@ document.getElementById("speed").addEventListener("input", (e) => {
   delay = Number(e.target.value);
   document.getElementById("speedValue").innerText = delay + " ms";
 });
+//No of Comparisons
+function updateSteps() {
+  document.getElementById("steps").innerText = "Steps: " + steps;
+}
 
 //Time COmplexiy
 function updateComplexity(algo) {
@@ -43,6 +48,9 @@ function renderArray(arr, highlight = -1, found = -1) {
 // Linear Search
 async function linearSearch(arr, target) {
   for (let i = 0; i < arr.length; i++) {
+    steps++;
+    updateSteps();
+
     renderArray(arr, i);
     await sleep(delay);
 
@@ -59,7 +67,11 @@ async function binarySearch(arr, target) {
   let l = 0, r = arr.length - 1;
 
   while (l <= r) {
-    let mid = Math.floor((l + r) / 2);
+    const mid = Math.floor((l + r) / 2);
+
+    steps++;
+    updateSteps();
+
     renderArray(arr, mid);
     await sleep(delay);
 
@@ -74,12 +86,15 @@ async function binarySearch(arr, target) {
   alert("Target not found");
 }
 
+
 // Start
 function start() {
   const arrInput = document.getElementById("arrayInput").value.trim();
   const target = Number(document.getElementById("targetInput").value);
   const algo = document.getElementById("algo").value;
-  
+ steps = 0;
+ updateSteps();
+
   updateComplexity(algo);
 
   if (!arrInput) {
