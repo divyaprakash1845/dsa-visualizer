@@ -1,7 +1,8 @@
 # DSA Visualizer
 
-An interactive **Data Structures & Algorithms Visualizer** designed to help users understand how algorithms work internally through step-by-step animations.  
-Currently, the project focuses on **Binary Search**, with plans to expand to additional searching and sorting algorithms.
+An interactive **Data Structures & Algorithms Visualizer** designed to help users understand how algorithms work internally through step-by-step animations.
+
+The project currently includes **searching and sorting algorithm visualizers**, with a modular structure that allows easy expansion.
 
 🔗 **Live Demo:**  
 https://divyaprakash1845.github.io/dsa-visualizer/
@@ -21,13 +22,13 @@ https://divyaprakash1845.github.io/dsa-visualizer/
 
 ## Features
 
-- Interactive visualization of **Binary Search**
-- User-defined **sorted array input**
-- User-defined **target element**
-- Step-by-step highlighting of the **mid element**
-- Clear visual feedback when the target is found
-- Adjustable **animation speed** using a slider
-- Dynamic display of time complexity for algorithm comparison
+- Interactive visualization of **searching and sorting algorithms**
+- User-defined array input
+- User-defined target input for searching algorithms
+- Step-by-step animation of algorithm execution
+- Live **step (comparison) counter**
+- Dynamic display of **time complexity**
+- Adjustable animation speed using a slider
 - Clean and minimal UI for better understanding
 - Deployed live using **GitHub Pages**
 
@@ -35,24 +36,46 @@ https://divyaprakash1845.github.io/dsa-visualizer/
 
 ## Modules
 
-### Binary Search Visualizer
-- Visualizes the binary search algorithm on a sorted array
-- Highlights the current middle element at each step
-- Narrows the search space dynamically
-- Uses animation delays to clearly demonstrate each iteration
+### Searching Algorithms
+- **Binary Search**
+- **Linear Search** (selectable within the visualizer)
 
-*(Additional modules will be added in future versions.)*
+Features:
+- Highlights current/mid element at each step
+- Dynamically narrows the search space (Binary Search)
+- Visual comparison of O(n) vs O(log n)
+
+---
+
+### Sorting Algorithms
+- **Bubble Sort**
+- **Selection Sort**
+- **Insertion Sort**
+
+Features:
+- Visual comparison and swaps
+- Highlighting of current, key, minimum, and sorted elements
+- Step-by-step growth of the sorted portion
+- Live step counter
 
 ---
 
 ## Visualization Logic
 
-1. The algorithm starts with the full search range.
-2. The middle element of the current range is highlighted in **yellow**.
-3. If the middle element matches the target, it turns **green**.
-4. Otherwise, the search range is reduced based on comparison.
-5. The process repeats until the target is found or the range becomes empty.
-6. Animation speed is controlled by the user using a slider.
+### Searching Algorithms
+- The algorithm starts with the full search range.
+- The current or middle element is highlighted in **yellow**.
+- If the element matches the target, it turns **green**.
+- Otherwise, the search range is updated based on comparison.
+- The process repeats until the target is found or the range becomes empty.
+
+### Sorting Algorithms
+- Elements being compared are highlighted.
+- Swaps and shifts are animated clearly.
+- The sorted portion of the array grows progressively.
+- Each comparison increases the step counter.
+
+Animation speed is controlled by the user using a slider.
 
 ---
 
