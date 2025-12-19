@@ -1,43 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Binary Search Visualizer</title>
-  <link rel="stylesheet" href="style.css">
+  <title>DSA Visualizer</title>
 </head>
 <body>
 
-  <h1>Binary Search Visualizer</h1>
-<div>
-  <input id="arrayInput" type="text" placeholder="Enter array (e.g. 2 5 8 12 16)">
-  <input id="targetInput" type="number" placeholder="Target">
+  <h1>DSA Visualizer</h1>
+  <p>Select an algorithm to visualize:</p>
 
-  <select id="algo">
-    <option value="binary">Binary Search</option>
-    <option value="linear">Linear Search</option>
-  </select>
-</div>
+  <ul>
+    <li>
+      <a href="searching/binary-search/">Binary Search</a>
+    </li>
+  </ul>
 
-
-  <div style="margin-top:10px;">
-    Speed:
-    <input type="range" id="speed" min="200" max="2000" value="1000">
-    <span id="speedValue">1000 ms</span>
-  </div>
-
-  <br>
-  <button onclick="start()">Start Search</button>
-<div id="complexity" style="margin-top:10px; font-weight:bold;">
-  Time Complexity: —
-</div>
-
-  <div id="array"></div>
-
-  <script src="script.js" defer></script>
 </body>
-
 </html>
-
-
-
-
