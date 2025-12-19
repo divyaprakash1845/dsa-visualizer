@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bubble Sort Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Bubble Sort Visualizer</h1>
+
+  <div>
+    <input id="arrayInput" type="text" placeholder="Enter array (e.g. 5 3 8 1 2)">
+  </div>
+
+  <div style="margin-top:10px;">
+    Speed:
+    <input type="range" id="speed" min="200" max="2000" value="1000">
+    <span id="speedValue">1000 ms</span>
+  </div>
+
+  <br>
+  <button onclick="start()">Start Sorting</button>
+
+  <div id="complexity" style="margin-top:10px; font-weight:bold;">
+    Time Complexity: O(n²)
+  </div>
+
+  <div id="steps" style="margin-top:5px; font-weight:bold;">
+    Steps: 0
+  </div>
+
+  <div id="array"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
