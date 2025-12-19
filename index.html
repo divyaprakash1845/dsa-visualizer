@@ -9,11 +9,25 @@
 
   <h1>Binary Search Visualizer</h1>
 
+  <div>
+    <input id="arrayInput" type="text" placeholder="Enter sorted array (e.g. 2 5 8 12 16)">
+    <input id="targetInput" type="number" placeholder="Target">
+  </div>
+
+  <div style="margin-top:10px;">
+    Speed:
+    <input type="range" id="speed" min="200" max="2000" value="1000">
+    <span id="speedValue">1000 ms</span>
+  </div>
+
+  <br>
+  <button onclick="start()">Start Search</button>
+
   <div id="array"></div>
 
-  <button onclick="startBinarySearch()">Start Search</button>
-
- <script src="script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
+
 </html>
+
 
