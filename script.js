@@ -1,7 +1,7 @@
 let delay = 1000;
 
 document.getElementById("speed").addEventListener("input", (e) => {
-  delay = e.target.value;
+  delay = Number(e.target.value);
   document.getElementById("speedValue").innerText = delay + " ms";
 });
 
@@ -16,7 +16,7 @@ function renderArray(arr, mid = -1, found = -1) {
   arr.forEach((val, idx) => {
     const div = document.createElement("div");
     div.className = "block";
-    div.innerText = val;
+    div.textContent = val;
 
     if (idx === mid) div.classList.add("active");
     if (idx === found) div.classList.add("found");
@@ -29,14 +29,12 @@ async function binarySearch(arr, target) {
   let l = 0, r = arr.length - 1;
 
   while (l <= r) {
-    let mid = Math.floor((l + r) / 2);
-
-    // Step 1: show mid (yellow)
+    const mid = Math.floor((l + r) / 2);
     renderArray(arr, mid);
     await sleep(delay);
 
     if (arr[mid] === target) {
-      // Step 2: found (green)
+      // found (green)
       renderArray(arr, -1, mid);
       return;
     }
@@ -56,9 +54,11 @@ function start() {
     alert("Enter array");
     return;
   }
-
-  const arr = arrInput.split(" ").map(Number);
+  const arr = arrInput.split(/\s+/).map(Number);
 
   renderArray(arr);
   binarySearch(arr, target);
 }
+
+
+window.start = start;
