@@ -4,6 +4,7 @@ document.getElementById("speed").addEventListener("input", (e) => {
   delay = Number(e.target.value);
   document.getElementById("speedValue").innerText = delay + " ms";
 });
+
 //Time COmplexiy
 function updateComplexity(algo) {
   const complexityDiv = document.getElementById("complexity");
@@ -75,6 +76,8 @@ function start() {
   const arrInput = document.getElementById("arrayInput").value.trim();
   const target = Number(document.getElementById("targetInput").value);
   const algo = document.getElementById("algo").value;
+  
+  updateComplexity(algo);
 
   if (!arrInput) {
     alert("Enter array");
@@ -93,4 +96,5 @@ function start() {
 }
 
 window.start = start;
+
 
