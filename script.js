@@ -1,4 +1,7 @@
 let delay = 1000;
+document.getElementById("algo").addEventListener("change", (e) => {
+  updateComplexity(e.target.value);
+});
 
 document.getElementById("speed").addEventListener("input", (e) => {
   delay = Number(e.target.value);
@@ -96,5 +99,6 @@ function start() {
 }
 
 window.start = start;
+
 
 
