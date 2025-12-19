@@ -27,6 +27,7 @@ https://divyaprakash1845.github.io/dsa-visualizer/
 - Step-by-step highlighting of the **mid element**
 - Clear visual feedback when the target is found
 - Adjustable **animation speed** using a slider
+- Dynamic display of time complexity for algorithm comparison
 - Clean and minimal UI for better understanding
 - Deployed live using **GitHub Pages**
 
