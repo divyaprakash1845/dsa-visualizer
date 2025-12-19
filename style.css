@@ -25,3 +25,13 @@ body {
 .found {
   background-color: lightgreen;
 }
+input {
+  padding: 5px;
+  margin: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
