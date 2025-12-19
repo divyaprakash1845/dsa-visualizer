@@ -9,7 +9,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function renderArray(arr, mid = -1, found = -1) {
+function renderArray(arr, highlight = -1, found = -1) {
   const container = document.getElementById("array");
   container.innerHTML = "";
 
@@ -18,23 +18,37 @@ function renderArray(arr, mid = -1, found = -1) {
     div.className = "block";
     div.textContent = val;
 
-    if (idx === mid) div.classList.add("active");
+    if (idx === highlight) div.classList.add("active");
     if (idx === found) div.classList.add("found");
 
     container.appendChild(div);
   });
 }
 
+// ---------------- LINEAR SEARCH ----------------
+async function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    renderArray(arr, i);
+    await sleep(delay);
+
+    if (arr[i] === target) {
+      renderArray(arr, -1, i);
+      return;
+    }
+  }
+  alert("Target not found");
+}
+
+// ---------------- BINARY SEARCH ----------------
 async function binarySearch(arr, target) {
   let l = 0, r = arr.length - 1;
 
   while (l <= r) {
-    const mid = Math.floor((l + r) / 2);
+    let mid = Math.floor((l + r) / 2);
     renderArray(arr, mid);
     await sleep(delay);
 
     if (arr[mid] === target) {
-      // found (green)
       renderArray(arr, -1, mid);
       return;
     }
@@ -42,23 +56,29 @@ async function binarySearch(arr, target) {
     if (arr[mid] < target) l = mid + 1;
     else r = mid - 1;
   }
-
   alert("Target not found");
 }
 
+// ---------------- START ----------------
 function start() {
   const arrInput = document.getElementById("arrayInput").value.trim();
   const target = Number(document.getElementById("targetInput").value);
+  const algo = document.getElementById("algo").value;
 
   if (!arrInput) {
     alert("Enter array");
     return;
   }
+
   const arr = arrInput.split(/\s+/).map(Number);
 
   renderArray(arr);
-  binarySearch(arr, target);
-}
 
+  if (algo === "linear") {
+    linearSearch(arr, target);
+  } else {
+    binarySearch(arr, target);
+  }
+}
 
 window.start = start;
